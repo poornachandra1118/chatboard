@@ -12,6 +12,7 @@ const Login = () => {
      const [record,set_record]=useState({
             
             Mobile:'',
+           passcode:'',
           
         })
 
@@ -31,7 +32,7 @@ const Login = () => {
             e.preventDefault()
             console.log('submited');
         object_keys.forEach((value)=>{
-            if(String(data[value].Mobile[0]) === String(record.Mobile )){
+            if((String(data[value].Mobile[0]) === String(record.Mobile )) && (String('2225')=== String(record.passcode)) ){
                         alert('login successfully done !')
                         nav('/Dashboard'+'/'+record.Mobile)
             }
@@ -63,6 +64,11 @@ const Login = () => {
         <div className="mb-3">
             <label for="exampleInputEmail1" className="form-label">Mobile</label>
             <input type="text" name='Mobile' onChange={(e)=>{set_record({...record,[e.target.name]:[e.target.value]})}}  className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+           
+        </div>
+           <div className="mb-3">
+            <label for="exampleInputEmail1" className="form-label">Passcode</label>
+            <input type="text" name='passcode' onChange={(e)=>{set_record({...record,[e.target.name]:[e.target.value]})}}  className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
            
         </div>
         {/* <div className="mb-3">
