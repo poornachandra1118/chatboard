@@ -194,9 +194,9 @@ const Dashboard = () => {
 
                 (String(data[x].from_mobile[0]) === String(chat_info.from_mobile)) ?
                messages.push(
-                { type: 'from', text:data[x].text[0] , time: '14:25' },
+                { type: 'from', text:data[x].text[0]  },
                ): messages.push(
-                { type: 'to', text:data[x].text[0], time: '14:25' },
+                { type: 'to', text:data[x].text[0]},
                )
             }
              }
